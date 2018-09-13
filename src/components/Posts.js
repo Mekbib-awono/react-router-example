@@ -1,23 +1,26 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const posts = [{
+const postsData = [{
     id: 1,
-    name: 'Initial post',
+    name: 'Springfield elementary',
 }, {
     id: 2,
-    name: 'Second post',
+    name: 'Powerplant',
 }, {
     id: 3,
-    name: 'More post',
+    name: 'Moe\'s',
 }];
-
 const Posts = () => (
-    <div className="App">
-        Posts..
-        {posts.map(post => (<li><Link to={`post/${post.id}`}>{post.name}</Link></li>))}
+    <div>
+        <h4>POSTS</h4>
+        {postsData.map(post => (
+            <div key={post.id}>
+                <h5><Link to={`/posts/${post.id}`}>{post.name}</Link></h5>
+            </div>))
+        }
     </div>
+
 );
 
 export default Posts;
-
